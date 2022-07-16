@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import serverUrl from "./../constant";
 
 const initialValues = { imgName: "", imgURL: "", imgDetails: "" };
 const onSubmit = (values, { resetForm }) => {

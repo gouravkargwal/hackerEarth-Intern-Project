@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { serverUrl } from "../constant";
+import serverUrl from "../constant";
 
 const ImageDetail = () => {
   const [data, setData] = useState(undefined);
