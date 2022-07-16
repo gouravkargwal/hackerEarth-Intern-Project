@@ -5,6 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { serverUrl } from "../constant";
 
 const EditImage = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const EditImage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/${id}`)
+      .get(`${serverUrl}${id}`)
       .then((res) => {
         if ((res.status = 200)) {
           setData(res.data.body);
@@ -29,7 +30,7 @@ const EditImage = () => {
   };
   const onSubmit = (values) => {
     axios
-      .put(`http://localhost:5000/${id}/edit`, values)
+      .put(`${serverUrl}${id}/edit`, values)
       .then((res) => {
         if ((res.status = 200)) {
           toast.success("Image updated!");

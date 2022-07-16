@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 const initialValues = { imgName: "", imgURL: "", imgDetails: "" };
 const onSubmit = (values, { resetForm }) => {
   axios
-    .post("http://localhost:5000/", values)
+    .post(`${serverUrl}`, values)
     .then((res) => {
       if ((res.status = 200)) {
         resetForm();

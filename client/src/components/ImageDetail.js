@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
+import { serverUrl } from "../constant";
 
 const ImageDetail = () => {
   const [data, setData] = useState(undefined);
@@ -8,7 +9,7 @@ const ImageDetail = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/${id}`)
+      .get(`${serverUrl}${id}`)
       .then((res) => {
         if ((res.status = 200)) {
           setData(res.data.body);
@@ -18,7 +19,7 @@ const ImageDetail = () => {
   }, [id]);
   const deleteImageHandler = () => {
     axios
-      .delete(`http://localhost:5000/delete/${id}`)
+      .delete(`${serverUrl}delete/${id}`)
       .then((res) => {
         console.log(res);
         navigate("/", { replace: true });

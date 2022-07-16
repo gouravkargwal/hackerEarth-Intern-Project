@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import serverUrl from "./../constant";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -10,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/?page=${pageNumber}&name=${search}`)
+      .get(`${serverUrl}?page=${pageNumber}&name=${search}`)
       .then((res) => {
         if ((res.status = 200)) {
           setData(res.data.body.getImage);
