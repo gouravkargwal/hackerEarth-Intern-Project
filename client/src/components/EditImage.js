@@ -5,7 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import serverUrl from "../constant";
+import { serverUrl } from "../constant";
 
 const EditImage = () => {
   const { id } = useParams();

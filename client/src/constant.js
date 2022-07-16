@@ -1,1 +1,1 @@
-export default const serverUrl = "https://hackerearth-intern-backend.herokuapp.com/";
+export const serverUrl = "https://hackerearth-intern-backend.herokuapp.com/";
